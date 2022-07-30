@@ -1,0 +1,14 @@
+language: generic
+# need super user permissions to execute this build
+sudo: required
+# need docker cli preinstalled
+services: 
+  - docker
+
+# series of commands before tests are run
+before_install:
+  # better to use a tag instead of deal with id
+  - docker build -t hexsoulb/docker-react-aws -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true hexsoulb/docker-react-aws npm run test
