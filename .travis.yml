@@ -20,6 +20,7 @@ deploy:
   env: "Dockerreactaws-env"
   bucket_name: "elasticbeanstalk-us-west-2-875375255289"
   bucket_path: "docker-react-aws"
+  edge: true
   on:
     branch: main
   access_key_id: "$AWS_ACCESS_KEY"
