@@ -13,6 +13,7 @@ RUN ["npm", "run", "build"]
 
 # next phase
 FROM nginx
+EXPOSE 80
 # using --from=tagname for multiphase
 # Configuration can be found on nginx documentation on docker hub
 COPY --from=builder /app/build /usr/share/nginx/html
